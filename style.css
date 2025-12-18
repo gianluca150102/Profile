@@ -73,15 +73,18 @@ body {
 /* LINK BUTTON */
 .link {
   display: flex;
-  align-items: center;
+  align-items: center;      /* sejajar vertikal */
   gap: 14px;
-  text-decoration: none;
-  color: #fff;
+
   padding: 14px 18px;
   border-radius: 18px;
   margin-bottom: 16px;
+
+  text-decoration: none;
+  color: #fff;
   font-weight: 600;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  line-height: 1;           /* INI KUNCI */
 }
 
 /* ICON */
@@ -94,12 +97,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
-.icon svg {
-  width: 20px;
-  height: 20px;
-  display: block;
+.link span {
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
 
 /* HOVER */
