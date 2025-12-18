@@ -5,18 +5,49 @@
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #ffffff, #f2f2f2);
   min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #89f7fe,
+    #66a6ff,
+    #fbc2eb,
+    #a6c1ee
+  );
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
 }
 
-/* CONTAINER */
+/* ANIMASI BACKGROUND */
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD / KOLOM UTAMA */
+.card {
+  width: 100%;
   max-width: 420px;
-  margin: 60px auto;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 30px 24px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   text-align: center;
 }
 
