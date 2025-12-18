@@ -5,11 +5,10 @@
   box-sizing: border-box;
 }
 
-/* BODY – BACKGROUND LAUT ONE PIECE */
+/* BODY – BACKGROUND LAUT */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
-  overflow: hidden;
   background: linear-gradient(
     180deg,
     #0b3c5d,
@@ -17,7 +16,10 @@ body {
     #76c7f2
   );
   background-size: 100% 300%;
-  animation: seaMove 10s ease-in-out infinite;
+  animation: seaMove 12s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ANIMASI LAUT */
@@ -33,50 +35,40 @@ body {
   }
 }
 
-/* ANGIN / KABUT LAUT */
-body::before {
+/* EFEK OMBak HALUS (BUKAN GARIS) */
+body::after {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(255,255,255,0.04),
-    rgba(255,255,255,0.04) 10px,
-    transparent 10px,
-    transparent 20px
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 120%,
+    rgba(255,255,255,0.25),
+    transparent 60%
   );
-  animation: windMove 25s linear infinite;
+  animation: waveMove 6s ease-in-out infinite;
   pointer-events: none;
 }
 
-@keyframes windMove {
-  from {
-    transform: translateX(0);
+@keyframes waveMove {
+  0%, 100% {
+    transform: translateY(0);
   }
-  to {
-    transform: translateX(200px);
+  50% {
+    transform: translateY(-12px);
   }
 }
 
 /* CONTAINER */
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* CARD / KOLOM UTAMA */
+/* CARD */
 .card {
   width: 100%;
   max-width: 420px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.9);
   padding: 32px 26px;
   border-radius: 26px;
   box-shadow: 0 30px 60px rgba(0,0,0,0.25);
@@ -86,7 +78,7 @@ body::before {
 /* JUDUL */
 .card h1 {
   font-size: 28px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #0b3c5d;
 }
 
@@ -97,7 +89,7 @@ body::before {
   margin-bottom: 26px;
 }
 
-/* LINK / BUTTON */
+/* LINK BUTTON */
 .link {
   display: flex;
   align-items: center;
@@ -105,13 +97,13 @@ body::before {
   text-decoration: none;
   color: #fff;
   padding: 14px 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   margin-bottom: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-/* ICON DI DALAM KOLOM */
+/* ICON */
 .icon {
   width: 38px;
   height: 38px;
@@ -123,15 +115,15 @@ body::before {
   font-size: 18px;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .link:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
 }
 
-/* WARNA TIAP PLATFORM */
+/* WARNA PLATFORM */
 .tiktok {
-  background: linear-gradient(135deg, #010101, #333);
+  background: linear-gradient(135deg, #111, #444);
 }
 
 .instagram {
@@ -139,7 +131,7 @@ body::before {
 }
 
 .youtube {
-  background: linear-gradient(135deg, #ff0000, #cc0000);
+  background: linear-gradient(135deg, #ff0000, #c00000);
 }
 
 .whatsapp {
