@@ -1,14 +1,15 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY – BACKGROUND ANIMASI AMAN */
+/* ================= BODY ================= */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,20 +25,13 @@ body {
   animation: bgMove 14s ease infinite;
 }
 
-/* ANIMASI BACKGROUND */
 @keyframes bgMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 .container {
   width: 100%;
   padding: 20px;
@@ -45,7 +39,7 @@ body {
   justify-content: center;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card {
   width: 100%;
   max-width: 420px;
@@ -56,41 +50,42 @@ body {
   text-align: center;
 }
 
-/* JUDUL */
+/* ================= TEXT ================= */
 .card h1 {
   font-size: 28px;
   margin-bottom: 6px;
   color: #0b3c5d;
 }
 
-/* DESKRIPSI */
 .desc {
   font-size: 14px;
   color: #555;
   margin-bottom: 28px;
 }
 
-/* LINK BUTTON */
+/* ================= LINK BUTTON ================= */
 .link {
   display: flex;
-  align-items: center;      /* sejajar vertikal */
+  align-items: center;
   gap: 14px;
 
   padding: 14px 18px;
-  border-radius: 18px;
   margin-bottom: 16px;
+  border-radius: 18px;
 
   text-decoration: none;
   color: #fff;
   font-weight: 600;
 
-  line-height: 1;           /* INI KUNCI */
+  line-height: 1;              /* MATIIN BASELINE */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ICON */
+/* ================= ICON BOX ================= */
 .icon {
   width: 40px;
   height: 40px;
+
   background: rgba(255,255,255,0.3);
   border-radius: 14px;
 
@@ -101,19 +96,27 @@ body {
   flex-shrink: 0;
 }
 
+/* ================= ICON FONT AWESOME (INI FIX UTAMA) ================= */
+.icon i {
+  display: block;
+  line-height: 0;              /* INI YANG BIKIN GA NAIK */
+  font-size: 20px;
+}
+
+/* ================= TEXT DI TOMBOL ================= */
 .link span {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 40px;                /* SAMA DENGAN ICON */
 }
 
-/* HOVER */
+/* ================= HOVER ================= */
 .link:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 }
 
-/* WARNA PLATFORM */
+/* ================= PLATFORM COLORS ================= */
 .tiktok {
   background: linear-gradient(135deg, #111, #444);
 }
