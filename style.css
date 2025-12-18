@@ -91,23 +91,16 @@ body {
   background: rgba(255,255,255,0.3);
   border-radius: 14px;
 
-  display: grid;
-  place-items: center;
-
-  font-size: 18px;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.icon i {
+.icon svg {
+  width: 20px;
+  height: 20px;
   display: block;
 }
-
-.icon i {
-  transform: translateY(1px);
-}
-
-
-
 
 /* HOVER */
 .link:hover {
