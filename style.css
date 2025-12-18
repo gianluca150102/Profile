@@ -8,16 +8,57 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
+  overflow: hidden;
   background: linear-gradient(
-    120deg,
-    #89f7fe,
-    #66a6ff,
-    #fbc2eb,
-    #a6c1ee
+    180deg,
+    #0b3c5d,
+    #1c7293,
+    #76c7f2
   );
-  background-size: 300% 300%;
-  animation: bgMove 12s ease infinite;
+  background-size: 100% 300%;
+  animation: seaMove 10s ease-in-out infinite;
 }
+
+@keyframes seaMove {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.04) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  animation: windMove 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes windMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200px);
+  }
+}
+
+
 
 /* ANIMASI BACKGROUND */
 @keyframes bgMove {
