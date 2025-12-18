@@ -8,7 +8,7 @@
 /* BODY */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #ffffff, #f1f1f1);
+  background: linear-gradient(180deg, #ffffff, #f2f2f2);
   min-height: 100vh;
 }
 
@@ -27,43 +27,57 @@ h1 {
   color: #111;
 }
 
-/* DESCRIPTION */
+/* DESC */
 .desc {
   font-size: 14px;
   color: #666;
   margin-bottom: 32px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* LINK BUTTON */
+/* BASE BUTTON */
 .link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  color: #111;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
+  display: block;
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 999px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 
-/* HOVER EFFECT */
+/* HOVER EFFECT (GERAK + GLOW) */
 .link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
 }
 
-/* MOBILE FRIENDLY */
-@media (max-width: 480px) {
-  .container {
-    margin: 40px 16px;
-  }
+/* PLATFORM COLORS */
+.tiktok {
+  background: linear-gradient(135deg, #000000, #333333);
+}
 
+.instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.youtube {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+}
+
+.website {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
   h1 {
     font-size: 22px;
   }
