@@ -102,6 +102,11 @@ body {
   display: block;
 }
 
+.icon i {
+  transform: translateY(1px);
+}
+
+
 
 
 /* HOVER */
