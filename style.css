@@ -86,13 +86,13 @@ body {
 
 /* ICON */
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   background: rgba(255,255,255,3.3);
   display: center;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 20px;
   font-size: 18px;
   line-height: 1;
 }
