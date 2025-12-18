@@ -35,10 +35,11 @@ h1 {
   line-height: 1.6;
 }
 
-/* BASE BUTTON */
 .link {
-  display: block;
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
   margin-bottom: 16px;
   border-radius: 999px;
   text-decoration: none;
@@ -48,6 +49,14 @@ h1 {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
+
+/* ICON DI DALAM KOLOM */
+.icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
 
 /* HOVER EFFECT (GERAK + GLOW) */
 .link:hover {
