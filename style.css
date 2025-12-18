@@ -1,90 +1,144 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
+/* BODY */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
+  overflow: hidden;
+}
 
+/* ===== ONE PIECE BACKGROUND ===== */
+.onepiece-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    180deg,
+    #7dd3fc 0%,
+    #38bdf8 40%,
+    #0284c7 100%
+  );
+}
+
+/* AWAN */
+.onepiece-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: 
+    radial-gradient(circle at 20% 30%, #ffffffaa 0 60px, transparent 70px),
+    radial-gradient(circle at 70% 20%, #ffffffaa 0 80px, transparent 90px),
+    radial-gradient(circle at 40% 60%, #ffffffaa 0 70px, transparent 80px);
+
+  animation: cloudMove 60s linear infinite;
+}
+
+/* LAUT */
+.onepiece-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+
+  background: linear-gradient(
+    180deg,
+    #0284c7,
+    #0369a1,
+    #075985
+  );
+
+  animation: seaWave 6s ease-in-out infinite;
+}
+
+/* ANIMASI */
+@keyframes cloudMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 2000px 0;
+  }
+}
+
+@keyframes seaWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: linear-gradient(
-    120deg,
-    #0b3c5d,
-    #1c7293,
-    #76c7f2,
-    #1c7293
-  );
-  background-size: 400% 400%;
-  animation: bgMove 14s ease infinite;
-}
-
-@keyframes bgMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.container {
-  width: 100%;
   padding: 20px;
-  display: flex;
-  justify-content: center;
 }
 
-/* ================= CARD ================= */
+/* ===== CARD ===== */
 .card {
   width: 100%;
   max-width: 420px;
-  background: #eaf6fb;
+  background: #ffffffdd;
+  backdrop-filter: blur(8px);
+
   padding: 32px 26px;
   border-radius: 28px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+
   text-align: center;
 }
 
-/* ================= TEXT ================= */
+/* JUDUL */
 .card h1 {
   font-size: 28px;
   margin-bottom: 6px;
   color: #0b3c5d;
 }
 
+/* DESKRIPSI */
 .desc {
   font-size: 14px;
-  color: #555;
+  color: #444;
   margin-bottom: 28px;
 }
 
-/* ================= LINK BUTTON ================= */
+/* LINK */
 .link {
   display: flex;
   align-items: center;
   gap: 14px;
 
   padding: 14px 18px;
-  margin-bottom: 16px;
   border-radius: 18px;
+  margin-bottom: 16px;
 
   text-decoration: none;
   color: #fff;
   font-weight: 600;
 
-  line-height: 1;              /* MATIIN BASELINE */
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: 0.3s;
 }
 
-/* ================= ICON BOX ================= */
+/* ICON BOX */
 .icon {
   width: 40px;
   height: 40px;
-
   background: rgba(255,255,255,0.3);
   border-radius: 14px;
 
@@ -95,27 +149,26 @@ body {
   flex-shrink: 0;
 }
 
-/* ================= ICON FONT AWESOME (INI FIX UTAMA) ================= */
+/* FIX ICON FONT */
 .icon i {
-  display: block;
-  line-height: 0;              /* INI YANG BIKIN GA NAIK */
+  line-height: 0;
   font-size: 20px;
 }
 
-/* ================= TEXT DI TOMBOL ================= */
+/* TEXT */
 .link span {
   display: flex;
   align-items: center;
-  height: 40px;                /* SAMA DENGAN ICON */
+  height: 40px;
 }
 
-/* ================= HOVER ================= */
+/* HOVER */
 .link:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.25);
 }
 
-/* ================= PLATFORM COLORS ================= */
+/* WARNA PLATFORM */
 .tiktok {
   background: linear-gradient(135deg, #111, #444);
 }
