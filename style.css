@@ -189,28 +189,30 @@ body {
   background: linear-gradient(135deg, #1c7293, #0b3c5d);
 }
 
-.jolly-roger {
+.ship {
   position: fixed;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 120px;
+  bottom: 22%;
+  left: -200px;
 
-  opacity: 0.15;
+  font-size: 96px;
+  z-index: 1;
   pointer-events: none;
-  z-index: 0;
 
-  animation: skullSpin 12s linear infinite,
-             skullFloat 4s ease-in-out infinite;
+  animation: shipMove 25s linear infinite,
+             shipWave 3s ease-in-out infinite;
 }
 
-@keyframes skullSpin {
-  from { transform: translateX(-50%) rotate(0deg); }
-  to   { transform: translateX(-50%) rotate(360deg); }
+@keyframes shipMove {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(120vw);
+  }
 }
 
-@keyframes skullFloat {
-  0%   { margin-top: 0; }
-  50%  { margin-top: -20px; }
-  100% { margin-top: 0; }
+@keyframes shipWave {
+  0%   { margin-bottom: 0; }
+  50%  { margin-bottom: 12px; }
+  100% { margin-bottom: 0; }
 }
