@@ -188,3 +188,42 @@ body {
 .website {
   background: linear-gradient(135deg, #1c7293, #0b3c5d);
 }
+
+/* ===== JOLLY ROGER ===== */
+.jolly-roger {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  font-size: 64px;
+  opacity: 0.8;
+  animation: skullFloat 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes skullFloat {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-12px) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* ===== SHIP ===== */
+.ship {
+  position: fixed;
+  bottom: 80px;
+  left: -100px;
+  font-size: 72px;
+  animation: shipSail 30s linear infinite;
+  z-index: 1;
+}
+
+@keyframes shipSail {
+  0% {
+    transform: translateX(-150px) translateY(0);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-8px);
+  }
+  100% {
+    transform: translateX(110vw) translateY(0);
+  }
+}
