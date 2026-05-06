@@ -17,6 +17,21 @@
 
 <body>
 
+  <body>
+
+  <audio autoplay loop muted id="bg-music">
+    <source src="backsound.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+
+    window.addEventListener("click", () => {
+      music.muted = false;
+      music.play();
+    }, { once: true });
+  </script>
+
   <div class="onepiece-bg"></div>
 
   <!-- ANIMASI ONE PIECE BARU -->
